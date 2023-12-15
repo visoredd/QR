@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* width: 100%; */
+  font-family: "Inter", sans-serif;
+  color: black;
+  font-weight: 300;
+}
+
+.custom-bg {
+  background: linear-gradient(
+    to right,
+    white 0%,
+    white 80%,
+    #0277bd 80%,
+    #0277bd 100%
+  );
+}
