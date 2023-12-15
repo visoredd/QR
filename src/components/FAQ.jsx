@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useRef, useEffect } from "react";
+import { motion, useInView, useAnimation, useScroll } from "framer-motion";
 import Line from "../assets/line2.png";
 import DropDown from "../assets/dropdown.svg";
 
@@ -41,7 +43,7 @@ const FAQcontent = ({ text, longText }) => {
   function handleToggle() {
     setOpen(!open);
   }
-  console.log(open);
+
   return (
     <div className="mb-[52px]">
       <div
@@ -64,8 +66,26 @@ const FAQcontent = ({ text, longText }) => {
 };
 
 const FAQ = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+  const mainControls = useAnimation();
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView]);
   return (
-    <div className="px-[20px] sm:px-0 flex flex-col justify-center items-center pb-[110px] h-screen">
+    <motion.div
+      ref={ref}
+      variants={{
+        hidden: { opacity: 0, y: 75 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      initial="hidden"
+      animate={mainControls}
+      transition={{ duration: 0.5, delay: 0.25 }}
+      className="px-[20px] sm:px-0 flex flex-col justify-center items-center pb-[110px] bg-[#EDEEF4] pt-[100px]"
+    >
       <h2 className="sm:text-[64px] text-[28px] font-semibold mb-[77px]">
         Most Frequently Asked Questions{" "}
       </h2>
@@ -74,7 +94,7 @@ const FAQ = () => {
           <FAQcontent key={index} text={FAQ.text} longText={FAQ.longText} />
         );
       })}
-    </div>
+    </motion.div>
   );
 };
 
