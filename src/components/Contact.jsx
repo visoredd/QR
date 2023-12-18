@@ -2,7 +2,6 @@ import React from "react";
 import Button from "./Button";
 
 const Contact = () => {
-  //Add states
   return (
     <section className="flex flex-col justify-center items-center mb-[50px] h-screen">
       <h1 className="text-[72px] font-semibold">Contact Us</h1>
