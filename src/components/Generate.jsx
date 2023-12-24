@@ -2,12 +2,11 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { Button } from "../components";
 import { motion, useInView, useAnimation, useScroll } from "framer-motion";
+import QRCode from "qrcode";
 
 const Generate = () => {
-  const [value, setValue] = useState("");
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
+  // const [value, setValue] = useState("");
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const mainControls = useAnimation();
@@ -16,6 +15,21 @@ const Generate = () => {
       mainControls.start("visible");
     }
   }, [isInView]);
+
+  const [url, setUrl] = useState("");
+  const [qrCode, setQrCode] = useState("");
+  const handleChange = (event) => {
+    setUrl(event.target.value);
+  };
+
+  const generateQrCode = () => {
+    QRCode.toDataURL(url, (err, url) => {
+      if (err) return console.error(err);
+      console.log(url);
+      setQrCode(url);
+    });
+  };
+
   return (
     <motion.div
       ref={ref}
@@ -41,7 +55,7 @@ const Generate = () => {
         </p>
         <input
           type="text"
-          value={value}
+          value={url}
           onChange={handleChange}
           placeholder="Enter URL here"
           className="w-[500px] h-[74px] border-2 border-black rounded-[20px] text-[24px] font-semibold pl-[20px] mb-[10px] bg-[#EDEEF4]"
@@ -49,10 +63,10 @@ const Generate = () => {
         <p className="mb-[56px] pl-[4px]">
           Link to open when scanned, e.g. https://example.com/
         </p>
-        <Button>Generate QR code</Button>
+        <button onClick={generateQrCode}>Generate QR code</button>
       </div>
       <div className="">
-        <img src="" alt="Hero image" className="max-h-[400px] max-w-[458px]" />
+        {<img src={qrCode} alt="QR code" className="w-[400px]" />}
       </div>
     </motion.div>
   );
