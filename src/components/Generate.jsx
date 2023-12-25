@@ -32,6 +32,9 @@ const Generate = () => {
     reader.readAsDataURL(file);
   };
 
+  const [mainColor, setMainColor] = useState("#000000");
+  const [bgColor, setBgColor] = useState("#FFFFFF");
+
   const generateQrCode = () => {
     new QrCodeWithLogo({
       canvas: canvasRef.current,
@@ -39,20 +42,22 @@ const Generate = () => {
       width: 400,
       logo: {
         src: logo,
-        logoSize: 0.32, // Customize logo size
-        // Other logo options...
+        logoSize: 0.32,
       },
       nodeQrCodeOptions: {
         margin: 1,
         color: {
-          dark: "#010599FF",
-          light: "#FFF",
+          dark: mainColor,
+          light: bgColor,
         },
       },
     })
       .toCanvas()
       .then(() => {
         setIsQrCodeGenerated(true); // Set the state to true once QR code is generated
+      })
+      .catch((error) => {
+        console.error("Error generating QR code: ", error);
       });
   };
 
@@ -120,6 +125,28 @@ const Generate = () => {
           accept="image/*"
           ref={fileInputRef}
         />
+        <div>
+          <p className="mr-3 mb-[4px] text-[18px] text-[#000] font-medium">
+            Customize the appearance of your QR code:
+          </p>
+          <div className="mb-[4px] flex items-center">
+            <label className="mr-3 text-[18px]">Foreground color:</label>
+            <input
+              type="color"
+              value={mainColor}
+              onChange={(e) => setMainColor(e.target.value)}
+            />
+          </div>
+
+          <div className="mb-[20px] flex items-center">
+            <label className="mr-2 text-[18px]">Background color:</label>
+            <input
+              type="color"
+              value={bgColor}
+              onChange={(e) => setBgColor(e.target.value)}
+            />
+          </div>
+        </div>
 
         <Button onClick={generateQrCode}>Generate QR code</Button>
       </div>
