@@ -6,7 +6,7 @@ const Footer = () => {
       <hr className=" w-full pb-[50px]" />
 
       <p className="text-[20px] font-medium text-center pb-[40px] text-[#fff]">
-        © 2023 instantQR.com, built and powered by{" "}
+        © 2024 instantQR.net, built and powered by{" "}
         <a href="https://nabivi.com/" className="text-[20px] font-semibold">
           nabivi.com
         </a>

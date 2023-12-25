@@ -6,17 +6,17 @@ import DropDown from "../assets/dropdown.svg";
 
 const FAQtext = [
   {
-    text: "Is it really free to create QR codes on instantQR.com?",
+    text: "Is it really free to create QR codes on instantQR.net?",
     longText:
-      "Yes, creating basic QR codes on instantQR.com is completely free. You can generate high-quality QR codes without any cost.",
+      "Yes, creating basic QR codes on instantQR.net is completely free. You can generate high-quality QR codes without any cost.",
   },
   {
-    text: "Can I customize my QR codes on instantQR.com?",
+    text: "Can I customize my QR codes on instantQR.net?",
     longText:
       "Absolutely! You can personalize your QR codes by adding colors, images, or logos to align them with your brand or specific message.",
   },
   {
-    text: "How do I create a QR code on instantQR.com?",
+    text: "How do I create a QR code on instantQR.net?",
     longText:
       "Simply paste a URL into the designated field on our website and click 'Generate QR code'. You can then customize your QR code as needed.",
   },
@@ -26,12 +26,12 @@ const FAQtext = [
       "You can link any URL to your QR code. This could be your website, a specific product page, a digital business card, or any online content you wish to share.",
   },
   {
-    text: "Can the QR codes created on instantQR.com be used for commercial purposes?",
+    text: "Can the QR codes created on instantQR.net be used for commercial purposes?",
     longText:
       "Yes, the QR codes you create are perfect for enhancing customer engagement, driving traffic, and boosting sales. They can be used in both print and digital media for your business needs.",
   },
   {
-    text: "Are my QR codes stored on instantQR.com after creation?",
+    text: "Are my QR codes stored on instantQR.net after creation?",
     longText:
       "No, your QR codes are not stored on our servers. They are generated instantly for your immediate use and are not retained on our system, ensuring your privacy and security. Any QR code created is automatically deleted from our system after a short period.",
   },
