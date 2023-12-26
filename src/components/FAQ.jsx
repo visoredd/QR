@@ -50,7 +50,7 @@ const FAQcontent = ({ text, longText }) => {
         className="flex flex-row justify-between cursor-pointer"
         onClick={handleToggle}
       >
-        <p className="text-[24px] font-medium ">{text}</p>
+        <p className="text-[20px] font-medium ">{text}</p>
         <img src={DropDown} alt="Arrow" className="w-[28px] h-auto" />
       </div>
       <p
@@ -84,9 +84,9 @@ const FAQ = () => {
       initial="hidden"
       animate={mainControls}
       transition={{ duration: 0.5, delay: 0.25 }}
-      className="px-[20px] sm:px-0 flex flex-col justify-center items-center pb-[110px] bg-[#EDEEF4] pt-[100px]"
+      className="px-[20px] sm:px-0 flex flex-col justify-center items-center bg-[#EDEEF4] min-h-screen h-auto py-[100px] px-[50px]"
     >
-      <h2 className="sm:text-[64px] text-[28px] font-semibold mb-[77px]">
+      <h2 className="sm:text-[60px] text-[28px] font-semibold mb-[77px]">
         Most Frequently Asked Questions{" "}
       </h2>
       {FAQtext.map((FAQ, index) => {

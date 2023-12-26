@@ -1,19 +1,42 @@
 import React from "react";
 import Button from "./Button";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  //Add states
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_wvwgv7s",
+        "template_2x9skmq",
+        form.current,
+        "0Zk7f9I89567zlE8U"
+      )
+      .then(
+        () => {
+          alert("Message successfully sent!");
+          window.location.reload(false);
+        },
+        () => {
+          alert("Failed to send the message, please try again");
+        }
+      );
+  };
   return (
-    <section className="flex flex-col justify-center items-center mb-[50px] h-screen">
-      <h1 className="text-[72px] font-semibold">Contact Us</h1>
-      <p className="text-[24px] leading-[34px] max-w-[700px] text-center mb-[48px]">
+    <section className="flex flex-col justify-center items-center min-h-screen h-auto py-[100px] px-[50px]">
+      <h1 className="text-[60px] font-semibold">Contact Us</h1>
+      <p className="text-[20px] leading-[30px] max-w-[580px] text-center mb-[48px]">
         If there's anything you're curious about or need assistance with, don't
         hesitate to reach out. Fill in the form with your query, and our team
         will get back to you promptly
       </p>
       <div className="contact-form">
-        {/* <form ref={form} onSubmit={sendEmail}> */}
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
+          {/* <form> */}
           <ul className="flex flex-col justify-center">
             <div className="flex gap-[20px] mb-[20px]">
               <li>
