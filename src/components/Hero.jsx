@@ -25,15 +25,21 @@ const Hero = () => {
       initial="hidden"
       animate={mainControls}
       transition={{ duration: 0.5, delay: 0.25 }}
-      className="flex justify-center items-center gap-[100px] custom-bg min-h-screen h-auto py-[100px] px-[50px] "
+      className="flex flex-col sm:flex-row justify-center items-center gap-[100px] sm:custom-bg min-h-screen h-auto py-[100px] px-[50px] "
     >
       <div className="flex flex-col justify-center items-start pt-[20px] ">
-        <h1 className="text-[68px] font-semibold leading-[1.1] mb-[30px]">
-          Create <br />
-          Your Custom <br />
+        <h1 className="text-[36px] sm:text-[68px] font-semibold leading-[1.1] mb-[30px]">
+          Create{" "}
+          <span className="hidden sm:inline">
+            <br />
+          </span>
+          Your Custom{" "}
+          <span className="hidden sm:inline">
+            <br />{" "}
+          </span>
           QR Codes for Free{" "}
         </h1>
-        <p className="text-[20px] leading-[30px] max-w-[640px] mb-[48px]">
+        <p className="text-[20px] sm:text-[18px] leading-[24px] sm:leading-[30px] max-w-[640px] mb-[48px]">
           Create unique and high-quality QR codes effortlessly with our QR Code
           Generator. Add a personal touch by adding colors and logos, making
           your QR codes stand out. Perfect for enhancing customer engagement,
@@ -48,7 +54,7 @@ const Hero = () => {
         <img
           src={HeroImage}
           alt="Hero image"
-          className="max-h-[400px] max-w-[458px]"
+          className="max-h-[300px] max-w-[358px] sm:max-h-[400px] sm:max-w-[458px]"
         />
       </div>
     </motion.div>

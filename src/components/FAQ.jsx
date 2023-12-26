@@ -84,9 +84,9 @@ const FAQ = () => {
       initial="hidden"
       animate={mainControls}
       transition={{ duration: 0.5, delay: 0.25 }}
-      className="px-[20px] sm:px-0 flex flex-col justify-center items-center bg-[#EDEEF4] min-h-screen h-auto py-[100px] px-[50px]"
+      className="px-[20px] sm:px-0 flex flex-col justify-center items-center bg-[#EDEEF4] min-h-screen h-auto py-[100px] !px-[50px]"
     >
-      <h2 className="sm:text-[60px] text-[28px] font-semibold mb-[77px]">
+      <h2 className="text-[36px] leading-[1.1] sm:text-[60px] font-semibold mb-[77px]">
         Most Frequently Asked Questions{" "}
       </h2>
       {FAQtext.map((FAQ, index) => {

@@ -18,9 +18,22 @@
   background: linear-gradient(
     to right,
     white 0%,
-    white 80%,
-    #0277bd 80%,
+    white 95%,
+    #0277bd 95%,
     #0277bd 100% /* #427aa1 80%,
     #427aa1 100% */
   );
+}
+
+@media (min-width: 640px) {
+  .sm\:custom-bg {
+    background: linear-gradient(
+      to right,
+      white 0%,
+      white 80%,
+      #0277bd 80%,
+      #0277bd 100% /* #427aa1 80%,
+    #427aa1 100% */
+    );
+  }
 }

@@ -93,17 +93,20 @@ const Generate = () => {
       initial="hidden"
       animate={mainControls}
       transition={{ duration: 0.5, delay: 0.25 }}
-      className="flex justify-center items-center gap-[100px] bg-[#EDEEF4] min-h-screen h-auto py-[100px] px-[50px]"
+      className="flex flex-col md:flex-row justify-center items-center gap-[100px] bg-[#EDEEF4] min-h-screen h-auto py-[100px] px-[50px]"
     >
       <div
         id="generate-section"
         className="flex flex-col justify-center items-start pt-[20px]"
       >
-        <h1 className="text-[60px] font-semibold leading-[1.1] mb-[30px]">
-          Effortless QR Code <br />
+        <h1 className="text-[36px] sm:text-[60px] font-semibold leading-[1.1] mb-[30px]">
+          Effortless QR Code{" "}
+          <span className="hidden sm:inline">
+            <br />
+          </span>
           Creation in Moments
         </h1>
-        <p className="text-[20px] leading-[30px] max-w-[500px] mb-[48px]">
+        <p className="text-[20px] leading-[24px] sm:leading-[30px] max-w-[500px] mb-[48px]">
           Easily generate your QR code by pasting a URL.
           <br />
           Personalize your QR code by adding colors, images, or logos to make it
@@ -114,7 +117,7 @@ const Generate = () => {
           value={url}
           onChange={handleChange}
           placeholder="Enter URL here"
-          className="w-[500px] h-[74px] border-2 border-black rounded-[20px] text-[20px] font-semibold pl-[20px] mb-[10px] bg-[#EDEEF4]"
+          className="w-auto sm:w-[500px] h-[74px] border-2 border-black rounded-[20px] text-[20px] font-semibold pl-[20px] mb-[10px] bg-[#EDEEF4]"
         />
         <p className="mb-[20px] pl-[4px] text-[14px]">
           Link to open when scanned, e.g. https://instantQR.net/
@@ -189,7 +192,10 @@ const Generate = () => {
       </div>
 
       <div className="flex flex-col items-center">
-        <canvas ref={canvasRef} className="!w-[400px] !h-[400px]" />
+        <canvas
+          ref={canvasRef}
+          className="max-w-[360px] max-h-[360px] sm:!w-[400px] sm:!h-[400px]"
+        />
 
         {isQrCodeGenerated && (
           <Button className="max-w-[160px] mt-[50px]" onClick={downloadQrCode}>
