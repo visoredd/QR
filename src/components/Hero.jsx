@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useInView, useAnimation, useScroll } from "framer-motion";
 
 import { Button } from "../components";
