@@ -27,6 +27,7 @@ const Contact = () => {
       );
   };
   return (
+    //states
     <section className="flex flex-col justify-center items-center min-h-screen h-auto py-[100px] px-[50px]">
       <h1 className="text-[36px] sm:text-[60px] font-semibold">Contact Us</h1>
       <p className="text-[20px] leading-[24px] sm:leading-[30px] max-w-[580px] text-center mb-[48px]">
