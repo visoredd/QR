@@ -5,7 +5,7 @@ import commonjs from "vite-plugin-commonjs";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/",
+  base: "/QR/",
   plugins: [
     react(),
     commonjs({
